@@ -350,7 +350,7 @@ h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
   margin-top: clamp(36px, 5vw, 56px);
 }
 .hero-lead {
-  max-width: 40ch;
+  max-width: none;
   font-size: clamp(17px, 1.4vw, 22px);
   color: rgba(255,255,255,0.9);
   line-height: 1.5;
@@ -443,7 +443,7 @@ h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
   color: var(--text-alternative);
   letter-spacing: 0.06em;
 }
-.section-tagline { color: var(--text-subtle); max-width: 38ch; }
+.section-tagline { color: var(--text-subtle); max-width: none; }
 
 /* ════════════════════════════════════════════════════════════════════
    About
@@ -464,7 +464,7 @@ h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
   color: var(--text-subtle);
   font-size: 17px;
   line-height: 1.55;
-  max-width: 50ch;
+  max-width: none;
 }
 
 .vm-grid {
@@ -807,8 +807,8 @@ h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
   border-bottom: 1px solid var(--line-normal);
 }
 .client-logo img {
-  max-width: 72%;
-  max-height: 72%;
+  max-width: 52%;
+  max-height: 52%;
   object-fit: contain;
   filter: grayscale(1) contrast(1.05);
   opacity: 0.7;
@@ -851,7 +851,7 @@ h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
   overflow-wrap: break-word;
 }
 .contact-title em { font-style: normal; color: #6CA8FF; }
-.contact-lead { color: rgba(255,255,255,0.78); font-size: 17px; line-height: 1.5; max-width: 40ch; }
+.contact-lead { color: rgba(255,255,255,0.78); font-size: 17px; line-height: 1.5; max-width: none; }
 
 .contact-details {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -1046,3 +1046,87 @@ h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
   .cap-machine { grid-template-columns: 28px 1fr; row-gap: 4px; padding: 16px 20px; }
   .cap-machine-spec { grid-column: 2; }
 }
+
+
+/* History (02) */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 56px;
+}
+.history-card { min-height: 300px; }
+.history-card .value-card-title { margin-top: 0; font-size: 19px; }
+.history-year {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  color: var(--text-subtle);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background .2s, color .2s;
+}
+.history-card:hover .history-year { background: var(--primary); color: var(--text-on-color); }
+.history-card-esg { background: var(--primary-surface); border-color: rgba(0,102,255,0.3); }
+.history-card-esg .history-year { background: var(--primary); color: var(--text-on-color); }
+@media (max-width: 1024px) { .history-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .history-grid { grid-template-columns: 1fr; } .history-card { min-height: 0; } }
+
+
+/* Process: infrastructure & monthly capacity */
+.infra { margin-top: clamp(56px, 7vw, 96px); }
+.infra-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.capacity-head { margin-top: clamp(48px, 6vw, 72px); }
+.infra-eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--primary); }
+.infra-lead { color: var(--text-subtle); font-size: 17px; line-height: 1.55; max-width: none; margin: 0; }
+.infra-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.infra-card {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 26px; background: var(--bg);
+  border: 1px solid var(--line-normal); border-radius: var(--radius-xl);
+}
+.infra-card-title { font-size: 18px; font-weight: 700; letter-spacing: -0.015em; color: var(--text-strong); }
+.infra-gear { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.infra-gear li { position: relative; padding-left: 16px; font-size: 14px; line-height: 1.45; color: var(--text-strong); }
+.infra-gear li::before { content: ""; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+.infra-perk { margin: auto 0 0; padding-top: 14px; border-top: 1px solid var(--line-normal); font-size: 13.5px; line-height: 1.5; color: var(--text-alternative); }
+.capacity-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.capacity-tile {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 28px; background: var(--bg);
+  border: 1px solid var(--line-normal); border-radius: var(--radius-xl);
+  border-top: 4px solid var(--primary);
+}
+.capacity-label { font-size: 14px; font-weight: 600; color: var(--text-alternative); }
+.capacity-value { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.capacity-num { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.035em; color: var(--text-strong); }
+.capacity-unit { font-size: 15px; font-weight: 600; color: var(--primary); }
+.capacity-sub { margin-top: auto; font-size: 13.5px; line-height: 1.5; color: var(--text-alternative); }
+.capacity-tile.is-hl { background: var(--primary); border-color: var(--primary); border-top-color: var(--primary); }
+.capacity-tile.is-hl .capacity-label,
+.capacity-tile.is-hl .capacity-sub { color: rgba(255,255,255,0.82); }
+.capacity-tile.is-hl .capacity-num,
+.capacity-tile.is-hl .capacity-unit { color: var(--text-on-color); }
+@media (max-width: 1180px) { .infra-grid, .capacity-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .infra-grid, .capacity-grid { grid-template-columns: 1fr; } }
+
+/* Infra & capacity inside Capabilities (white section) */
+.capabilities .infra-card,
+.capabilities .capacity-tile:not(.is-hl) { background: var(--bg-secondary); }
+
+/* Work: product & service portfolio */
+.portfolio-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: clamp(48px, 6vw, 72px); }
+.portfolio-card {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 26px; background: var(--bg);
+  border: 1px solid var(--line-normal); border-radius: var(--radius-xl);
+}
+.portfolio-idx { align-self: flex-start; font-family: var(--mono); font-size: 13px; color: var(--primary); letter-spacing: 0.06em; }
+.portfolio-cat { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; color: var(--text-strong); }
+.portfolio-photos-label { margin-bottom: 20px; }
+@media (max-width: 1180px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1024px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .portfolio-grid { grid-template-columns: 1fr; } }
