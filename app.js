@@ -104,10 +104,10 @@ const CAPACITY = [{
   l: "Paper consumed",
   s: "per month · flexible for urgent orders and high-mix, low- to high-volume runs"
 }, {
-  v: "14",
+  v: "28",
   u: "million pairs",
   l: "Die cut grey board blanks for shoe keeper",
-  s: "per month · 14,000,000 pairs",
+  s: "per month · 28,000,000 pairs",
   hl: true
 }];
 const CAPABILITIES = [{
